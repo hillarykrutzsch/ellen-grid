@@ -1,0 +1,31 @@
+footer{
+    margin-bottom:30px;
+    ul{
+        display:flex;
+        justify-content: center;
+        list-style-type: none;
+        padding:0;
+        background-color:$dark-blue;
+        box-shadow:$default-box-shadow;
+        border-radius:3px;
+        li{
+            padding:1em 0;
+            a{
+                display:block;
+                color:white;
+                padding: 0.25em 1em;
+                border-right:1px solid white;
+                text-decoration: none;
+                &:hover{
+                    color:$lime-green;
+                }
+            }
+
+            &:last-child{
+                a{
+                    border-right:none;
+                }
+            }
+        }
+    }
+}

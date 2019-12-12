@@ -1,0 +1,21 @@
+h1,h2,h3,h4,h5,h6,p{
+    color:$text-black;
+    font-weight:300;
+    margin:0.5em 0;
+    padding:0;
+    span.bold{
+        font-weight:900;
+    }
+}
+p{
+    margin-bottom:1em;
+    line-height:1.4em;
+}
+
+a{
+    color:$text-black;
+    text-decoration:none;
+    &:hover{
+        color:rgba($text-black, 0.6);
+    }
+}
