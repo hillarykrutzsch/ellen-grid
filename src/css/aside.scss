@@ -4,9 +4,18 @@
             box-shadow: $default-box-shadow;
             border-radius:3px;
             padding:1em;
+            .header{
+                text-align:center;
+                text-decoration:underline;
+            }
             &.sidebar-contact{
+                text-align:center;
                 background-color:rgba($lime-green, 0.5);
                 margin-bottom:20px;
+
+                .image-ellen{
+                    border-radius:2px;
+                }
             }
             &.sidebar-association{
                 background-color:#eee;
