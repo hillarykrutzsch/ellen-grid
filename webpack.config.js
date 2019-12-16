@@ -15,7 +15,7 @@ module.exports = {
   // a bundled JS file. Webpack needs to produce this file,
   // but for our purposes you can ignore it
   output: {
-    path: path.resolve(__dirname, "docs"),
+    path: path.resolve(__dirname, "dist"),
 // Specify the base path for all the styles within your
     // application. This is relative to the output path, so in
     // our case it will be './wwwroot/css'
