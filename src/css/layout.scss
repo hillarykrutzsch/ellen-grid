@@ -7,67 +7,82 @@ body{
     width:100%;
 }
 
-
-
 .site-container{
     display:grid;
     grid-gap:30px;
     max-width:1000px;
     margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 7fr;
+    grid-template-areas:
+        "header header header"
+        "main main contact"
+        "main main contact"
+        "main main qualifications"
+        "section1 section2 qualifications"
+        "section3 section4 qualifications"
+        "footer footer footer";
     header{
-        grid-column: 1 / -1;
+        grid-area:header;
     }
-    main{
-        grid-column: span 2;
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: 1fr 1fr;
-        section.main-content{
-            grid-column:span 2;
+    section.main-content{
+        grid-area: main;
+    }
+    section.main-subsection{
+        &.section1{
+            grid-area:section1;
         }
-        section.main-subsection{
-            background-color:#ddd;
-            padding:0;
-            box-shadow:$default-box-shadow;
-            border-radius:3px;
-            position:relative;
-            img{
-                width:100%;
-                height:auto;
-                display:block;
-                position:relative;
-                z-index:1;
-            }
-            .subsection-content{
-                padding:0;
-                position:absolute;
-                top:0;
-                z-index:2;
-                width:100%;
-                height:100%;
-                text-align:center;
-                display:inline-block;
-                vertical-align:middle;
-                background-color:rgba(#eee, 0.6);
-                display:flex;
-                justify-content: center;
-                align-items:center;
-                h3{
-                    font-size:32px;
-                }
-            }
-            a{
-                color:$text-black;
-                text-decoration:none;
-                &:hover{
-                    color:rgba($text-black, 0.6);
-                }
-            }
+        &.section2{
+            grid-area:section2;
+        }
+        &.section3{
+            grid-area:section3;
+        }
+        &.section4{
+            grid-area:section4;
+        }
+        
+    }
+    aside{
+        &.sidebar-contact{
+            grid-area:contact;
+        }
+        &.sidebar-qualifications{
+            grid-area:qualifications;
         }
     }
     footer{
-        grid-column: 1 / -1;
+        grid-area:footer;
+    }
+
+    @media (max-width: 1100px) { 
+        padding: 0 2em;
+    }
+    @media (max-width: 960px) { 
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+        "header header header header header header header header"
+        "main main main main main contact contact contact"
+        "main main main main main contact contact contact"
+        "main main main main main contact contact contact"
+        "qualifications qualifications qualifications qualifications qualifications qualifications qualifications qualifications"
+        "section1 section1 section2 section2 section3 section3 section4 section4"
+        "footer footer footer footer footer footer footer footer";
+    }
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:16px;
+        grid-template-areas:
+        "header header header header"
+        "contact contact contact contact"
+        "main main main main"
+        "qualifications qualifications qualifications qualifications"
+        "section1 section1 section2 section2"
+        "section3 section3 section4 section4"
+        "footer footer footer footer";
+    } 
+    @media (max-width: 560px) {
+        padding: 0 1em;
     }
 }
 

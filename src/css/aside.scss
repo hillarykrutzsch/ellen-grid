@@ -1,31 +1,63 @@
 
     aside{
-        section{
-            box-shadow: $default-box-shadow;
-            border-radius:3px;
-            padding:1em;
-            .header{
-                text-align:center;
-                text-decoration:underline;
-            }
-            &.sidebar-contact{
-                text-align:center;
-                background-color:rgba($lime-green, 0.5);
-                margin-bottom:20px;
+        box-shadow: $default-box-shadow;
+        border-radius:3px;
+        padding:1em;
+        .header{
+            text-align:center;
+            text-decoration:underline;
+            font-size:24px;
+        }
+        &.sidebar-contact{
+            text-align:center;
+            background-color:rgba($lime-green, 0.5);
 
+            .image-ellen{
+                border-radius:2px;
+            }
+            @media (max-width:768px){
+                text-align:left;
                 .image-ellen{
-                    border-radius:2px;
+                    float:left;
+                    margin-right:20px;
+                }
+                .header{
+                    text-align:left;
+                    margin:0;
                 }
             }
-            &.sidebar-association{
-                background-color:#eee;
-                ul{
-                    padding:0 1em;
-                    li{
-                        margin: 0.75em 0;
-                    }
+            @media (max-width:480px){
+                .image-ellen{
+                    width:120px;
+                }
+                .header{
+                    font-size:20px;
+                }
+                h3{
+                    font-size:16px;
+                }
+            }
+            @media (max-width:440px){
+                text-align:center;
+                .image-ellen{
+                    float:none;
+                    margin-right:0;
+                    width:auto;
+                }
+                .header{
+                    text-align:center;
                 }
             }
         }
+        &.sidebar-association{
+            background-color:#eee;
+            ul{
+                padding:0 1em;
+                li{
+                    margin: 0.75em 0;
+                }
+            }
+        }
+        
         
     }

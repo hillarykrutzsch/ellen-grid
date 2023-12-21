@@ -1,14 +1,28 @@
 header{
     text-align:center;
+    border-bottom:2px solid black;
     .page-header{
         h1{
             font-size:60px;
             margin-top:0.5em;
             margin-bottom:0;
+            @media (max-width:960px){
+                font-size:48px;
+            }
+            @media (max-width:768px){
+                font-size:40px;
+            }
         }
         h2{
+            font-size:32px;
             margin:0;
             margin-bottom:0.5em;
+            @media (max-width:960px){
+                font-size:28px;
+            }
+            @media (max-width:768px){
+                font-size:20px;
+            }
         }
     }
     nav{
@@ -24,12 +38,17 @@ header{
                 a{
                     display:block;
                     color:white;
-                    padding: 1em 0;
+                    padding: 0.5em 0;
                     font-weight:700;
                     letter-spacing:0.75px;
                     text-transform: uppercase;
                     text-decoration: none;
                     &:hover{
+                        color:$lime-green;
+                    }
+                }
+                &.selected{
+                    a{
                         color:$lime-green;
                     }
                 }
